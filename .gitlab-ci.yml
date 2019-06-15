@@ -1,5 +1,6 @@
 stages:
   - test
+  - publish
 
 test-python27:
   image: python:2.7-alpine # python image comes with pip
@@ -14,3 +15,10 @@ test-python36:
   script:
     - pip install -r requirements_dev.txt
     - python -m pytest -v tests/unit/*.py
+
+publish:
+  image: python:3.6-alpine # python image comes with pip
+  stage: publish
+  script:
+    - pip install -r requirements_dev.txt
+    - twine upload dist/* --verbose
