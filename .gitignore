@@ -1,0 +1,19 @@
+# virtualenv
+venv*
+env
+
+# log files
+.log
+
+# editor junk
+.idea/
+.DS_Store
+
+# python
+*.py[c]
+*.pytest_cache
+
+# build
+build
+dist
+*.egg-info
